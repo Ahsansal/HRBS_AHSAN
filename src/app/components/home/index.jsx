@@ -60,9 +60,9 @@ export default function Home() {
       </div>
 
       {tasks.sort((a,b)=>{
-        if (a == "completed" && b !== "completed" )return 1;
-        if (b !== "completed" && a == "completed") return -1;
-        else return 0;
+        if (a.status === "completed" && b.status !== "completed" )return 1;
+        if (a.status !== "completed" && b.status === "completed") return -1;
+         return 0;
         
       }).map((item, index) => (
         <div key={index} className="flex items-center gap-3 mb-2">
