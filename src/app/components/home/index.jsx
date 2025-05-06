@@ -6,8 +6,7 @@ import Image from "next/image";
 export default function Home() {
   const [task, setTask] = useState("");
   const [tasks, setTasks] = useState([
-    { description: 'task1', status: 'notCompleted' },
-    { description: 'task 2', status: 'completed' }
+   
   ]);
  
 
@@ -43,13 +42,17 @@ export default function Home() {
 
 
   return (
-    <div className="p-10">
+    <div className="p-10 bg-[blue]/30 h-screen flex flex-col justify-center items-center gap-2">
+      <div >
+        <h1 className="text-[30px] text-black font-bold">TODO LIST</h1>
+      </div>
+      <div className="w-full  min-h-[400px] max-w-[420px] p-[30px] rounded bg-[black]/30 shadow-2xl">
       <div className="flex gap-2 mb-4">
         <input
           value={task}
           onChange={(e) => setTask(e.target.value)}
           placeholder="Enter a task"
-          className="border px-4 py-2 rounded"
+          className="border px-4 py-2 rounded outline-none"
         />
         <button
           onClick={handleAddTask}
@@ -84,6 +87,7 @@ export default function Home() {
           />
         </div>
       ))}
+      </div>
     </div>
   );
 }
